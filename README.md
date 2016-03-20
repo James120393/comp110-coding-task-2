@@ -27,3 +27,42 @@ Or
 * The Player gets away, this will cause the NPC to go into high alert and revisit the two places where the player was seen and got away more frequently.
 
 Possible stretch goal will be if the player is seen again the NPC will anticipate where the player is going and will try to head there first unless the player goes in a completely new direction.
+
+
+##Pseudocode for NPC AI
+
+**While (false)** player is not in sight do
+
+        Patrol
+
+        **If** player in sight
+
+		Return true
+
+        **End if**
+ 
+**If** (True) player is in sight do
+
+	Follow player
+
+	**For** each NPC following player do
+
+		**If** NPC is doctor and player has weapon
+			Doctor to run
+
+		**Else** if NPC is doctor and catches player
+			Player dies and effect is placed
+               **End if**
+
+		**If** NPC is guard and catches player
+			Player dies
+
+		**End if**
+
+	**End for**
+
+	**If** player goes through door
+
+		Return False
+
+**End while**
