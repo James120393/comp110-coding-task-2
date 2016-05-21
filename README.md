@@ -1,5 +1,17 @@
 # comp110-coding-task-2
 
+#comp110-4-1506530
+
+#Note:
+##For stand alone code please go to the "comp110 4 1506530" subfolder.
+
+
+##To see the Project working Please go to the folder labelled "doomed patient (For Testing)"
+
+
+##For PseudoCode and UML charts please go to "Charts-Pseudo" Folder.
+
+
 This is the repository for COMP110 Coding Task 2.
 
 ##What is AI Architecture?
@@ -30,6 +42,7 @@ Possible stretch goal will be if the player is seen again the NPC will anticipat
 
 
 ##Pseudocode for NPC AI
+
 
 **While (false)** player is not in sight do
 
@@ -66,3 +79,5 @@ Possible stretch goal will be if the player is seen again the NPC will anticipat
 		Return False
 
 **End while**
+
+

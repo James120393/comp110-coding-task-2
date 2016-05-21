@@ -237,3 +237,9 @@ _Pvt_Extensions
 
 # Force the entire SDL distribution to be added to the repository
 !**/SDL2*/**
+doomed_patient/doomed_patient.VC.db
+doomed_patient/doomed_patient.VC.db
+*.db
+doomed_patient/doomed_patient.VC.db
+doomed_patient/doomed_patient.VC.db
+*.db
