@@ -5,10 +5,6 @@
 #Note:
 ##For stand alone code please go to the "comp110 4 1506530" subfolder.
 
-
-##To see the Project working Please go to the folder labelled "doomed patient (For Testing)"
-
-
 ##For PseudoCode and UML charts please go to "Charts-Pseudo" Folder.
 
 

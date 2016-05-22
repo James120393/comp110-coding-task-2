@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 //This code was Pair Programmed by James and Herriet 
 //with James driving and Harriet navigating.
+/////////////////////////////////////////////////////////////////////////////////////
 NPC::NPC(PatientGame* game, VectorXY startCoordinates, Texture * sprite)
 	: Character(game, startCoordinates, sprite)
 {
@@ -60,83 +61,6 @@ void NPC::changeDirection()
 {
 	movementDirection = nextDirection;
 }
-//////////////////////////////////////Harriet's Code Begins///////////////////////////////////////////////
-void NPC::setNextDirection()
-{
-	std::shared_ptr<CellEdge> currentEdge = currentCell->getEdge(movementDirection);
-
-	// Keeping the NPC's on patrol while not close to the Player.
-	if (!closeToPlayer())
-	{
-		while (currentEdge->isWall() || currentEdge->isDoor())
-		{
-			int random = rand() % 4;
-			nextDirection = static_cast<Directions::Direction>(random);
-			currentEdge = currentCell->getEdge(nextDirection);
-		}
-	}
-
-	else
-	{
-		// Detect if the Player is too close.
-		isPlayerClose();
-	}
-}
-
-void NPC::updateDirection()
-{
-	if (nextDirection != movementDirection)
-	{
-		std::shared_ptr<LevelCell> nextCell = game->level.getCell(currentCell->getCoordinates() + Directions::getDirectionVector(nextDirection));
-
-		VectorXY currentCellCentre = currentCell->getCentre();
-
-		// Pointer because of polymorphism
-		std::shared_ptr<CellEdge> currentEdge = currentCell->getEdge(nextDirection);
-
-		if (currentEdge->isPassage())
-		{
-
-			// Check that the NPC is past the centre of its cell, relative
-			// to its movement direction
-			switch (movementDirection)
-			{
-			case Directions::Direction::NORTH:
-				if (centre.y <= currentCellCentre.y)
-				{
-					centre.y = currentCellCentre.y;
-					changeDirection();
-				}
-				break;
-
-			case Directions::Direction::EAST:
-				if (centre.x >= currentCellCentre.x)
-				{
-					centre.x = currentCellCentre.x;
-					changeDirection();
-				}
-				break;
-
-			case Directions::Direction::SOUTH:
-				if (centre.y >= currentCellCentre.y)
-				{
-					centre.y = currentCellCentre.y;
-					changeDirection();
-				}
-				break;
-
-			case Directions::Direction::WEST:
-				if (centre.x <= currentCellCentre.x)
-				{
-					centre.x = currentCellCentre.x;
-					changeDirection();
-				}
-				break;
-			}
-		}
-	}		
-}
-//////////////////////////////////////Harriet's Code Ends///////////////////////////////////////////////
 
 void NPC::isPlayerClose()
 {

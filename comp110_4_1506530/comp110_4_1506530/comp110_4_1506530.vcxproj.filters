@@ -15,25 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Doctor.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Guard.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NPC.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Doctor.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Guard.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NPC.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="Doctor.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
